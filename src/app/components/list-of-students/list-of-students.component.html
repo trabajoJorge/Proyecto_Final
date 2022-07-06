@@ -1,0 +1,18 @@
+<h2>
+  Listado students
+</h2>
+<div *ngIf="!students.length">No hay estudiantes por el momento</div>
+<div>
+  <span *ngIf="students.length">Nombre</span>
+  <span *ngIf="students.length">Dirección</span>
+  <span *ngIf="students.length">Grupo</span>
+  <article *ngFor="let student of students">
+    <span>{{student.id}}</span>
+    <span>{{student.name}}</span>
+    <span>{{student.address}}</span>
+    <span>{{student.group}}</span>
+    <span><button (click)="this.deleteStudent(student)"> Eliminar alumno </button></span>
+  </article>
+</div>
+
+

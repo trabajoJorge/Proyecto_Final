@@ -1,0 +1,18 @@
+<h2>Alta cliente</h2>
+<p>
+  <span>Nombre:</span>
+  <input required type="text" [(ngModel)]="student.name">
+</p>
+<p>
+  <span>Dirección:</span>
+  <input required type="text" [(ngModel)]="student.address">
+</p>
+<p>
+  <span>Grupo:</span>
+  <select required [(ngModel)]="student.group">
+    <option *ngFor="let group of groups" value="{{group.name}}">{{group.name}}</option>
+  </select>
+</p>
+<p>
+  <button (click)="this.newStudent()">Guardar</button>
+</p>
