@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Student, Group } from '../../model/student.model';
+import { Student, Group } from '../student.model';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class StudentsService {
 
   private students: Student[];
   private groups: Group[];
+  private groups$ = new Subject<Student[]>();
 
   constructor() {
     this.groups = [
@@ -34,7 +37,7 @@ export class StudentsService {
   }
 
   getStudents() {
-    return this.students;
+    return this.groups$.asObservable();
   }
 
   addStudent(student: Student) {

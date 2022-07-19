@@ -1,5 +1,5 @@
-import { Student, Group } from '../../model/student.model';
-import { StudentsService } from '../../services/students/students.service';
+import { Student, Group } from '../../core/student.model';
+import { StudentsService } from '../../core/students/students.service';
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';

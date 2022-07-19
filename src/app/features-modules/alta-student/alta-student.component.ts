@@ -1,6 +1,7 @@
-import { Student, Group } from '../../model/student.model';
-import { StudentsService } from '../../services/students/students.service';
+import { Student, Group } from '../../core/student.model';
+import { StudentsService } from '../../core/students/students.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-student-alta',
@@ -12,6 +13,7 @@ export class AltaStudentComponent implements OnInit {
 
   student: Student;
   groups: Group[];
+  groups$: Observable<Student[]>;
 
   constructor(private studentsService: StudentsService) {
       this.student= this.studentsService.newStudent();
@@ -21,6 +23,8 @@ export class AltaStudentComponent implements OnInit {
   ngOnInit() {
     this.student= this.studentsService.newStudent();
     this.groups = this.studentsService.getGroups();
+    this.groups$ = this.studentsService.getStudents();
+    this.groups$.subscribe(groups => this.groups = groups);
   }
 
   newStudent(): void {

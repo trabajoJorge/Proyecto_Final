@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentsService } from '../../services/students/students.service';
+import { StudentsService } from '../core/students/students.service';
 import { FormsModule } from '@angular/forms';
-import { AltaStudentComponent } from '../../components/alta-student/alta-student.component';
-import { ListOfStudentsComponent } from '../../components/list-of-students/list-of-students.component';
+import { AltaStudentComponent } from '../features-modules/alta-student/alta-student.component';
+import { ListOfStudentsComponent } from '../features-modules/list-of-students/list-of-students.component';
 
 
 @NgModule({
